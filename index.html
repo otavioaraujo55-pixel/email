@@ -4,58 +4,40 @@
 <meta charset="UTF-8">
 <title>Contato</title>
 
-<style>
-body{
-  font-family: Arial;
-  text-align:center;
-  padding-top:100px;
-}
-
-.botao{
-  display:inline-block;
-  padding:18px 35px;
-  font-size:20px;
-  text-decoration:none;
-  color:white;
-  background:#007BFF;
-  border-radius:10px;
-}
-</style>
-
 <script>
 function abrirEmail(){
 
-  // tentativa Gmail
-  window.location.href =
-  "googlegmail://co?to=irismatos.adv@gmail.com&subject=Contato&body=Olá vim pelo Instagram";
+  var intent = "intent://send/#Intent;" +
+               "scheme=mailto;" +
+               "S.to=irismatos.adv@gmail.com;" +
+               "S.subject=Contato;" +
+               "S.body=Olá vim pelo Instagram;" +
+               "end";
 
-  // fallback Outlook
-  setTimeout(function(){
-    window.location.href =
-    "ms-outlook://compose?to=irismatos.adv@gmail.com&subject=Contato&body=Olá vim pelo Instagram";
-  },800);
-
-  // fallback mailto
-  setTimeout(function(){
-    window.location.href =
-    "mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá vim pelo Instagram";
-  },1600);
+  window.location.href = intent;
 }
 
 window.onload = function(){
-  setTimeout(abrirEmail,600);
+  setTimeout(abrirEmail, 500);
 }
 </script>
 
 </head>
 
-<body>
+<body style="font-family:Arial;text-align:center;padding-top:100px;">
 
-<h2>Enviar Email</h2>
+<h2>Contato</h2>
 
 <p>Se não abrir automaticamente clique abaixo:</p>
 
-<a class="botao" onclick="abrirEmail()">
+<a onclick="abrirEmail()" style="
+padding:18px 35px;
+background:#007BFF;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:20px;
+cursor:pointer;">
 Abrir Email
 </a>
 

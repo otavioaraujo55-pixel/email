@@ -2,35 +2,74 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Contato</title>
+<title>Contato - Íris Matos</title>
 
 <style>
+
 body{
-font-family:Arial;
+font-family: Arial, sans-serif;
+background:#f4f6f8;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 text-align:center;
-padding-top:100px;
+max-width:400px;
+}
+
+h1{
+margin-top:0;
+color:#333;
+}
+
+p{
+color:#666;
+margin-bottom:30px;
 }
 
 .botao{
-padding:18px 35px;
+display:inline-block;
 background:#007BFF;
 color:white;
-border-radius:10px;
-font-size:20px;
+padding:16px 30px;
+border-radius:8px;
+font-size:18px;
 text-decoration:none;
+transition:0.2s;
 }
+
+.botao:hover{
+background:#0056b3;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<h2>Enviar Email</h2>
+<div class="card">
+
+<h1>Fale com Dra. Íris</h1>
+
+<p>
+Clique no botão abaixo para abrir seu aplicativo de email e enviar sua mensagem.
+</p>
 
 <a class="botao"
-href="mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá,%20Dra.20%Iris%20">
+href="mailto:irismatos.adv@gmail.com?subject=Contato&body=Ol%C3%A1,%20Dra.%20%C3%8Dris">
 Enviar Email
 </a>
+
+</div>
 
 </body>
 </html>

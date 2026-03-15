@@ -7,38 +7,69 @@
 <script>
 function abrirEmail(){
 
-  var intent = "intent://send/#Intent;" +
-               "scheme=mailto;" +
-               "S.to=irismatos.adv@gmail.com;" +
-               "S.subject=Contato;" +
-               "S.body=Olá vim pelo Instagram;" +
-               "end";
+  var ua = navigator.userAgent.toLowerCase();
 
-  window.location.href = intent;
-}
+  if(ua.includes("android")){
+    
+    // tenta abrir Gmail
+    window.location.href =
+    "googlegmail://co?to=irismatos.adv@gmail.com&subject=Contato&body=Olá vim pelo Instagram";
 
-window.onload = function(){
-  setTimeout(abrirEmail, 500);
+    // fallback
+    setTimeout(function(){
+      window.location.href =
+      "mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá vim pelo Instagram";
+    },1200);
+
+  }
+
+  else if(ua.includes("iphone") || ua.includes("ipad")){
+
+    // Apple Mail
+    window.location.href =
+    "mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá vim pelo Instagram";
+
+  }
+
+  else{
+
+    // desktop
+    window.location.href =
+    "mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá vim pelo Instagram";
+
+  }
+
 }
 </script>
 
-</head>
+<style>
+body{
+font-family:Arial;
+text-align:center;
+padding-top:100px;
+}
 
-<body style="font-family:Arial;text-align:center;padding-top:100px;">
-
-<h2>Contato</h2>
-
-<p>Se não abrir automaticamente clique abaixo:</p>
-
-<a onclick="abrirEmail()" style="
+.botao{
 padding:18px 35px;
 background:#007BFF;
 color:white;
-text-decoration:none;
 border-radius:10px;
 font-size:20px;
-cursor:pointer;">
-Abrir Email
+text-decoration:none;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Enviar Email</h2>
+
+<p>Toque no botão abaixo</p>
+
+<a class="botao" onclick="abrirEmail()">
+Enviar Email
 </a>
 
 </body>

@@ -1,76 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Contato</title>
-
 <script>
 function abrirEmail(){
 
   var ua = navigator.userAgent.toLowerCase();
 
   if(ua.includes("android")){
-    
-    // tenta abrir Gmail
+
+    // deep link Gmail correto
     window.location.href =
-    "googlegmail://co?to=irismatos.adv@gmail.com&subject=Contato&body=Olá vim pelo Instagram";
+    "googlegmail://co?to=irismatos.adv@gmail.com&subject=Contato&body=Olá%20vim%20pelo%20Instagram";
 
     // fallback
     setTimeout(function(){
       window.location.href =
-      "mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá vim pelo Instagram";
+      "mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá%20vim%20pelo%20Instagram";
     },1200);
-
-  }
-
-  else if(ua.includes("iphone") || ua.includes("ipad")){
-
-    // Apple Mail
-    window.location.href =
-    "mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá vim pelo Instagram";
 
   }
 
   else{
 
-    // desktop
     window.location.href =
-    "mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá vim pelo Instagram";
+    "mailto:irismatos.adv@gmail.com?subject=Contato&body=Olá%20vim%20pelo%20Instagram";
 
   }
 
 }
 </script>
-
-<style>
-body{
-font-family:Arial;
-text-align:center;
-padding-top:100px;
-}
-
-.botao{
-padding:18px 35px;
-background:#007BFF;
-color:white;
-border-radius:10px;
-font-size:20px;
-text-decoration:none;
-cursor:pointer;
-}
-</style>
-
-</head>
-
-<body>
-
-<h2>Enviar Email</h2>
-
-<p>Toque no botão abaixo</p>
-
-<a class="botao" onclick="abrirEmail()">
-Enviar Email
-</a>
-
-</body>
-</html>
